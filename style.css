@@ -1,0 +1,480 @@
+:root{
+  --primary:#e67e22;
+  --primary-dark:#b8641b;
+  --accent:#e67e22;
+  --bg:#fbf8f5;
+  --surface:#ffffff;
+  --text:#2b2623;
+  --muted:#736a65;
+  --border:#e6ded7;
+  --green:#25D366;
+  --radius:16px;
+
+  --dark-header: #7b2909;
+  --text-light: #f5ede6;
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+*{box-sizing:border-box}
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:100px;
+    overflow-x: hidden;
+}
+
+body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img, iframe{max-width: 100%;}
+
+h1,h2,h3,h4{font-family:var(--font-heading);font-weight:700;margin:0;letter-spacing:-0.01em}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}
+
+/* TOPO / HEADER */
+.main-header{
+    background: var(--dark-header);
+    color: var(--text-light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.header-content{display: flex; justify-content: space-between; align-items: center;}
+.logo-area{display: flex; align-items: center; gap: 12px;}
+.nav-logo{width: 70px; height: 70px; border-radius: 10px; object-fit: cover; flex-shrink: 0;}
+.logo-text h1{font-size:1.9rem; letter-spacing: 1px;}
+.logo-text p{font-size:0.9rem; margin: 0; opacity: 0.8; letter-spacing: 2px;}
+.desktop-nav{display: flex; gap: 30px;}
+.desktop-nav a{color: var(--text-light); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.2s;}
+.desktop-nav a:hover{color: var(--primary);}
+.btn-pedir-topo{
+    background: var(--green);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: 0.3s;
+}
+.btn-pedir-topo:hover{transform: translateY(-2px);}
+
+/* 1. HERO BANNER */
+.hero-banner{
+    background-color: #2b2623;
+    background-image: linear-gradient(to right, rgba(20, 16, 14, 0.85) 0%, rgba(20, 16, 14, 0.45) 60%, rgba(20, 16, 14, 0.25) 100%), url('img/fundo.bmp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: var(--text-light);
+    padding: 70px 0 85px 0;
+}
+.hero-inner{display: flex; align-items: center; justify-content: flex-start;}
+.hero-text{max-width: 620px; width: 100%;}
+
+/* Selo Aberto (Verde) */
+.hero-status-badge{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(37, 211, 102, 0.2);
+    border: 1px solid rgba(37, 211, 102, 0.5);
+    color: #4ade80;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+.status-dot{width: 9px; height: 9px; background: #22c55e; border-radius: 50%; flex-shrink: 0; animation: pulse 1.5s infinite;}
+
+/* Selo Fechado (Vermelho automático) */
+.hero-status-badge.closed{
+    background: rgba(239, 68, 68, 0.22);
+    border-color: rgba(239, 68, 68, 0.6);
+    color: #f87171;
+}
+.hero-status-badge.closed .status-dot{
+    background: #ef4444;
+    animation: none;
+}
+
+@keyframes pulse{0%{opacity: 1;} 50%{opacity: 0.3;} 100%{opacity: 1;}}
+
+.hero-text h2{
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    margin: 10px 0 15px 0;
+    line-height: 1.15;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.hero-subtitle{
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    opacity: 0.95;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+.hero-buttons{display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;}
+
+.btn-whatsapp-hero{
+    background: var(--green);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    transition: 0.3s;
+}
+.btn-whatsapp-hero:hover{transform: translateY(-3px); background: #20ba5a;}
+
+.btn-outline-hero{
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.7);
+    padding: 14px 24px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+.btn-outline-hero:hover{border-color: #fff; background: rgba(255,255,255,0.2);}
+.hero-phone{font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; text-shadow: 0 1px 6px rgba(0,0,0,0.6);}
+
+/* 2. SOBRE A DONA JEANE + SELOS */
+.about-section{padding: 70px 0; background: var(--surface); border-bottom: 1px solid var(--border);}
+.about-box{max-width: 800px; margin: auto; text-align: center;}
+.about-box h3{font-size: clamp(1.75rem, 4vw, 2.3rem); color: var(--text); margin-bottom: 20px;}
+.about-lead{font-size: clamp(1.05rem, 2.5vw, 1.2rem); font-weight: 600; color: var(--primary); margin-bottom: 15px;}
+.about-box p{font-size: 1.05rem; color: var(--muted); line-height: 1.7; margin-bottom: 30px;}
+
+.features-badges{display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 30px;}
+.badge-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 14px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+.badge-item i{color: var(--primary); font-size: 1.2rem;}
+
+/* 3. SEÇÃO "ESCOLHA O QUE DESEJA" */
+.categories-section{padding: 80px 0; background: var(--bg);}
+.section-title{font-size: clamp(1.8rem, 4vw, 2.5rem); text-align: center; color: var(--text); margin-bottom: 50px;}
+.categories-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.cat-card.has-bg{
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.cat-card.has-bg:hover{transform: translateY(-6px); box-shadow: 0 15px 35px rgba(0,0,0,0.2);}
+.cat-card.has-bg::before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.2) 70%);
+}
+.cat-card-content{
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    color: #fff;
+    text-align: left;
+}
+.cat-card-content h4{font-size: 2rem; margin-bottom: 8px; letter-spacing: 0.5px;}
+.cat-card-content p{font-size: 0.95rem; margin: 0 0 20px 0; opacity: 0.9; line-height: 1.4;}
+.cat-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+.cat-btn:hover{background: var(--primary-dark); gap: 12px;}
+
+/* NOVA SEÇÃO DE AVALIAÇÃO DO GOOGLE */
+.google-review-section{padding: 70px 0; background: var(--surface); border-bottom: 1px solid var(--border);}
+.google-review-card{
+    max-width: 750px;
+    margin: auto;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+.google-icon-wrapper{
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 1.8rem;
+    color: #4285F4;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.google-review-content h3{font-size: clamp(1.6rem, 3.5vw, 2rem); margin-bottom: 10px; color: var(--text);}
+.google-review-content p{font-size: 1.05rem; color: var(--muted); margin-bottom: 20px; line-height: 1.6;}
+.review-stars-display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: #f59e0b;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+.review-stars-display span{
+    margin-left: 8px;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 1rem;
+}
+.btn-google-review{
+    background: #4285F4;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.35);
+    transition: 0.3s;
+}
+.btn-google-review:hover{background: #3367d6; transform: translateY(-2px);}
+
+/* 4. SEÇÃO FINAL DE CTA */
+.cta-final-section{padding: 80px 0; background: linear-gradient(135deg, #7b2909 0%, #521b05 100%); color: #fff; text-align: center;}
+.cta-final-box{max-width: 750px; margin: auto;}
+.cta-final-box h3{font-size: clamp(1.9rem, 4.5vw, 2.8rem); margin-bottom: 15px; color: #fff; line-height: 1.2;}
+.cta-final-box p{font-size: clamp(1.05rem, 2.5vw, 1.2rem); opacity: 0.9; margin-bottom: 15px;}
+.cta-location-info{display: block; font-size: 1.05rem; font-weight: 600; color: #fde047; margin-bottom: 30px;}
+.btn-whatsapp-gigante{
+    background: var(--green);
+    color: #fff;
+    padding: 18px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+.btn-whatsapp-gigante:hover{transform: translateY(-4px); background: #20ba5a;}
+
+/* 5. RODAPÉ */
+.main-footer{background: var(--dark-header); color: var(--text-light); padding: 60px 0 0 0;}
+.footer-grid{display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 50px;}
+.footer-col h4{font-size: 1.3rem; margin-bottom: 20px; color: #fff;}
+.footer-col p{font-size: 0.95rem; opacity: 0.9; margin-bottom: 15px;}
+.italic-footer{font-style: italic; opacity: 0.8 !important;}
+.footer-col i{margin-right: 10px; width: 15px; color: var(--primary);}
+.work-hours p{margin: 0;}
+
+.map-container-large{background: #333; height: 220px; border-radius: 12px; overflow: hidden; margin-bottom: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);}
+.map-link-btn{
+    color: #fff;
+    background: var(--primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+.map-link-btn:hover{background: var(--primary-dark);}
+
+.footer-bottom{background: rgba(0,0,0,0.25); padding: 25px 0 95px 0;} /* Espaço extra embaixo para o botão flutuante não cobrir o rodapé */
+.footer-bottom-content{display: flex; justify-content: space-between; align-items: center;}
+.footer-logo-small .nav-logo{width: 40px; height: 40px;}
+.footer-logo-small h1{font-size: 1.1rem;}
+.footer-logo-small p{font-size: 0.6rem;}
+.footer-slogan{font-weight: 500; font-size: 0.9rem !important;}
+.social-icons{display: flex; gap: 20px;}
+.social-icons a{color: var(--text-light); font-size: 1.4rem; transition: 0.2s;}
+.social-icons a:hover{color: var(--primary);}
+
+/* BOTÃO WHATSAPP FLUTUANTE FIXO E GIGANTE */
+
+
+/* =========================================================
+   RESPONSIVIDADE PARA TABLETS E TODOS OS CELULARES
+========================================================= */
+
+/* Tablets e telas médias (até 992px) */
+@media(max-width:992px){
+    .categories-grid{grid-template-columns: repeat(2, 1fr);}
+    .footer-grid{grid-template-columns: 1fr; gap: 30px;}
+}
+
+/* Celulares padrão (até 768px) */
+@media(max-width:768px){
+    html{scroll-padding-top: 140px;}
+    .wrap{padding: 0 18px;}
+
+    /* Header compacto e centralizado no celular */
+    .main-header{padding: 12px 0;}
+    .header-content{flex-direction: column; gap: 12px;}
+    .desktop-nav{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
+        width: 100%;
+    }
+    .desktop-nav a{font-size: 0.85rem; padding: 4px 2px;}
+    .btn-pedir-topo{display: none;} /* Evita redundância no topo, pois já há o botão gigante flutuante e no hero */
+
+    /* Hero Banner ajustado para tela vertical */
+    .hero-banner{
+        padding: 45px 0 55px 0;
+        background-image: linear-gradient(to bottom, rgba(20, 16, 14, 0.88) 0%, rgba(20, 16, 14, 0.72) 100%), url('img/fundo.bmp');
+    }
+    .hero-inner{flex-direction: column; text-align: center;}
+    .hero-text{max-width: 100%;}
+    .hero-status-badge{
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        justify-content: center;
+        max-width: 100%;
+    }
+    .hero-buttons{
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    .btn-whatsapp-hero,
+    .btn-outline-hero{
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    .hero-phone{justify-content: center; font-size: 1.1rem;}
+
+    /* Seção Sobre */
+    .about-section{padding: 50px 0;}
+    .features-badges{flex-direction: column; align-items: stretch; gap: 12px;}
+    .badge-item{justify-content: center;}
+
+    /* Grid de Categorias em 1 coluna */
+    .categories-section{padding: 55px 0;}
+    .section-title{margin-bottom: 32px;}
+    .categories-grid{grid-template-columns: 1fr; gap: 22px;}
+    .cat-card.has-bg{height: 340px;}
+    .cat-card-content h4{font-size: 1.7rem;}
+    .cat-btn{width: 100%;}
+
+    /* Avaliação Google */
+    .google-review-section{padding: 50px 0;}
+    .google-review-card{padding: 28px 20px;}
+    .btn-google-review{width: 100%; font-size: 0.95rem; padding: 14px 20px;}
+
+    /* CTA Final */
+    .cta-final-section{padding: 55px 0;}
+    .btn-whatsapp-gigante{
+        width: 100%;
+        font-size: 1.05rem;
+        padding: 16px 20px;
+    }
+
+    /* Rodapé */
+    .main-footer{padding-top: 45px;}
+    .map-link-btn{width: 100%;}
+    .footer-bottom-content{flex-direction: column; gap: 16px; text-align: center;}
+
+    /* Botão WhatsApp flutuante visível com texto */
+    .fab-whatsapp-fixed{
+        right: 16px;
+        bottom: 16px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+    .fab-whatsapp-fixed i{font-size: 1.35rem;}
+}
+
+/* Celulares muito pequenos (320px a 380px - ex: iPhone SE, Galaxy A01/J2) */
+@media(max-width:380px){
+    .logo-text h1{font-size: 1.2rem;}
+    .nav-logo{width: 42px; height: 42px;}
+    .hero-status-badge{font-size: 0.74rem; padding: 5px 10px;}
+    .btn-whatsapp-hero,
+    .btn-outline-hero,
+    .btn-google-review,
+    .btn-whatsapp-gigante{
+        font-size: 0.9rem;
+        padding: 14px 14px;
+    }
+    .fab-whatsapp-fixed{
+        right: 12px;
+        bottom: 12px;
+        padding: 11px 16px;
+        font-size: 0.88rem;
+    }
+}
